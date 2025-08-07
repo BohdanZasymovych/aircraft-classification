@@ -1,3 +1,9 @@
+# My files
+data
+# !data/dataset-archives 
+yolo11n.pt
+yolov8s.pt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
