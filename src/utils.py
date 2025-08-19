@@ -13,7 +13,7 @@ def get_models() -> list[str]:
     Name of a model coincides with its folder. 
     return: list of names of models. 
     """
-    models = list(filter(lambda x: x.startswith("train-"), os.listdir(PATH_TO_MODELS)))
+    models = list(sorted(filter(lambda x: x.startswith("train-"), os.listdir(PATH_TO_MODELS))))
     return models
 
 
@@ -21,7 +21,7 @@ def get_images() -> list[str]:
     """
     Function returns list of names of all images in folder test-images
     """
-    images = os.listdir(PATH_TO_IMAGES)
+    images = list(sorted(os.listdir(PATH_TO_IMAGES)))
     return images
 
 

@@ -1,8 +1,11 @@
 # My files
 data
-# !data/dataset-archives 
-yolo11n.pt
-yolov8s.pt
+**/.vscode
+test-images
+test-results
+*.pt
+script/fix_dataset.py
+script/fix_labels.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

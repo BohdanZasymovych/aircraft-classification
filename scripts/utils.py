@@ -4,6 +4,15 @@ from typing import Iterable
 import json
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
+import numpy as np
+from PIL import Image
+
+
+def add_gaussian_noise(img: Image.Image, mean=0, std=25) -> Image.Image:
+    arr = np.array(img).astype(np.float32)
+    noise = np.random.normal(mean, std, arr.shape)
+    noisy_arr = np.clip(arr + noise, 0, 255).astype(np.uint8)
+    return Image.fromarray(noisy_arr)
 
 
 def clear_folder(path_to_folder: str) -> None:
@@ -93,6 +102,6 @@ def plot_classes_presence(path_to_folder: str, path_to_class_mapping: str, plot:
     return None
 
 
-if __name__ == "__main__":
-    # print(plot_classes_presence("/home/bohdan/code/aircraft-classification/data/russian-planes-yolov8-dataset/all-labels", "/home/bohdan/code/aircraft-classification/data/russian-planes-yolov8-dataset/class_names_mapping.json"))
-    split_dataset_files("/home/bohdan/code/aircraft-classification/data/russian-planes-yolov8-dataset/all-labels", "/home/bohdan/code/aircraft-classification/data/russian-planes-yolov8-dataset/all-images", "/home/bohdan/code/aircraft-classification/data/russian-planes-yolov8-dataset", train_size=0.8)
+def clamp(value, min_val, max_val):
+    """Function clamps the value to be within the specified range."""
+    return max(min_val, min(value, max_val))
