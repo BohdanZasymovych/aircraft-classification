@@ -9,6 +9,9 @@ from PIL import Image
 
 
 def add_gaussian_noise(img: Image.Image, mean=0, std=25) -> Image.Image:
+    """
+    Function adda gausian noise to given image and returns it.
+    """
     arr = np.array(img).astype(np.float32)
     noise = np.random.normal(mean, std, arr.shape)
     noisy_arr = np.clip(arr + noise, 0, 255).astype(np.uint8)
@@ -40,7 +43,7 @@ def copy_files(path_to_folder: str, file_names: Iterable[str], destination_folde
             shutil.copy(os.path.join(path_to_folder, file), destination_folder)
 
 
-def split_dataset_train_val(dataset: list[int], train_size: float) -> tuple[list[int], list[int]]:
+def split_dataset_train_val_test(dataset: list[int], train_size: float, test_size: float=None) -> tuple[list[int], list[int]]:
     """
     Function splits dataset represented as list to train and validation sets randomly.
     train_size parameter deffiens proportion in which dataset will be splited,
@@ -49,19 +52,37 @@ def split_dataset_train_val(dataset: list[int], train_size: float) -> tuple[list
     """
     if not 0 <= train_size <= 1:
         raise ValueError("train_size parameter has to be non-negative number less or equal to one")
+
+    if test_size is not None and not 0 <= test_size <= 1:
+        raise ValueError("test_size parameter has to be non-negative number less or equal to one")
     
-    train, val = train_test_split(dataset, train_size=train_size, random_state=15)
+    train, temp = train_test_split(dataset, train_size=train_size, random_state=15)
 
-    return train, val
+    if test_size is not None:
+        val, test = train_test_split(temp, test_size=test_size/(1-train_size))
+
+        return train, val, test
+
+    return train, temp
 
 
-def split_dataset_files(path_to_labels: str, path_to_images: str, destination_path: str, train_size: float) -> None:
+def split_dataset_files(path_to_labels: str, path_to_images: str, destination_path: str, train_size: float, test_size: float=None) -> None:
     dataset = [os.path.splitext(os.path.basename(file))[0] for file in os.listdir(path_to_labels)]
-    train, val = split_dataset_train_val(dataset, train_size=train_size)
-    copy_files(path_to_folder=path_to_labels, file_names=train, destination_folder=os.path.join(destination_path, "labels", "train"))
-    copy_files(path_to_folder=path_to_labels, file_names=val, destination_folder=os.path.join(destination_path, "labels", "val"))
-    copy_files(path_to_folder=path_to_images, file_names=train, destination_folder=os.path.join(destination_path, "images", "train"))
-    copy_files(path_to_folder=path_to_images, file_names=val, destination_folder=os.path.join(destination_path, "images", "val"))
+    if test_size is None:
+        train, val = split_dataset_train_val_test(dataset, train_size=train_size)
+        copy_files(path_to_folder=path_to_labels, file_names=train, destination_folder=os.path.join(destination_path, "labels", "train"))
+        copy_files(path_to_folder=path_to_labels, file_names=val, destination_folder=os.path.join(destination_path, "labels", "val"))
+        copy_files(path_to_folder=path_to_images, file_names=train, destination_folder=os.path.join(destination_path, "images", "train"))
+        copy_files(path_to_folder=path_to_images, file_names=val, destination_folder=os.path.join(destination_path, "images", "val"))
+    else:
+        train, val, test = split_dataset_train_val_test(dataset, train_size=train_size, test_size=test_size)
+        copy_files(path_to_folder=path_to_labels, file_names=train, destination_folder=os.path.join(destination_path, "labels", "train"))
+        copy_files(path_to_folder=path_to_labels, file_names=val, destination_folder=os.path.join(destination_path, "labels", "val"))
+        copy_files(path_to_folder=path_to_labels, file_names=test, destination_folder=os.path.join(destination_path, "labels", "test"))
+
+        copy_files(path_to_folder=path_to_images, file_names=train, destination_folder=os.path.join(destination_path, "images", "train"))
+        copy_files(path_to_folder=path_to_images, file_names=val, destination_folder=os.path.join(destination_path, "images", "val"))
+        copy_files(path_to_folder=path_to_images, file_names=test, destination_folder=os.path.join(destination_path, "images", "test"))
 
 
 def plot_classes_presence(path_to_folder: str, path_to_class_mapping: str, plot: bool=True, returns: bool=True) -> None | dict:

@@ -1,5 +1,7 @@
 # My files
 data
+!data/artifitial-data/airbase-images-v2/
+!data/artifitial-data/plane-images/
 **/.vscode
 test-images
 test-results
