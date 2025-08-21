@@ -7,10 +7,21 @@ PATH_TO_MODELS = "/home/bohdan/code/aircraft-classification/runs/detect"
 PATH_TO_IMAGES = "/home/bohdan/code/aircraft-classification/test-images"
 
 
+def get_path() -> str:
+    """
+    Function asks user to enter path until user enters valid one
+    """
+    while True:
+        path = input(">>> ")
+        if os.path.exists(path):
+            return path
+        print("path doesn't exist, enter valid path")
+
+
 def get_models() -> list[str]:
     """
     Function returns list of all trained model names.
-    Name of a model coincides with its folder. 
+    Name of a model coinsides with its folder. 
     return: list of names of models. 
     """
     models = list(sorted(filter(lambda x: x.startswith("train-"), os.listdir(PATH_TO_MODELS))))

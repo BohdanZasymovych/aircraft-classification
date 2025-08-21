@@ -1,10 +1,14 @@
 # My files
-data
-!data/artifitial-data/airbase-images-v2/
+data/*
+!data/artifitial-data/
+data/artifitial-data/*
+!data/artifitial-data/airbase-images/
 !data/artifitial-data/plane-images/
+!data/artifitial-data/plane-images-v2/
 **/.vscode
 test-images
 test-results
+detection-results
 *.pt
 script/fix_dataset.py
 script/fix_labels.py

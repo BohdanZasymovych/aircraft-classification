@@ -1,7 +1,7 @@
 task: detect
 mode: train
 model: yolov8s.pt
-data: data/russian-planes-yolov8-dataset/data.yml
+data: data/dataset-russian-planes/data.yaml
 epochs: 80
 time: null
 patience: 100
