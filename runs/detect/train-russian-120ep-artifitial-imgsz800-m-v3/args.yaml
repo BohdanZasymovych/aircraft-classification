@@ -4,8 +4,8 @@ model: yolo11m.pt
 data: data/dataset-russian-planes-artifitial-v5/data.yaml
 epochs: 120
 time: null
-patience: 25
-batch: 3
+patience: 20
+batch: 4
 imgsz: 800
 save: true
 save_period: -1
@@ -13,7 +13,7 @@ cache: false
 device: null
 workers: 8
 project: null
-name: train2
+name: train4
 exist_ok: false
 pretrained: true
 optimizer: auto
@@ -102,4 +102,4 @@ auto_augment: null
 erasing: 0.0
 cfg: null
 tracker: botsort.yaml
-save_dir: /home/bohdan/code/aircraft-classification/runs/detect/train2
+save_dir: /home/bohdan/code/aircraft-classification/runs/detect/train4
