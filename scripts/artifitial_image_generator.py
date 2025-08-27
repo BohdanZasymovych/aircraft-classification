@@ -3,10 +3,10 @@ import random
 import json
 from time import time
 from PIL import Image, ImageEnhance, ImageFilter
-from utils import add_gaussian_noise #, clamp
+from utils import add_gaussian_noise
 
 
-CLASSES_NAMES_MAPPING_PATH = "data/artifitial-data/plane-images-v2/class_names_to_id_mapping.json"
+CLASSES_NAMES_MAPPING_PATH = "data/artifitial-data/plane-images-v3/class_names_to_id_mapping.json"
 
 with open(CLASSES_NAMES_MAPPING_PATH, "r", encoding="utf-8") as file:
     CLASSES_NAMES_MAPPING = json.load(file)
@@ -271,7 +271,7 @@ class ImageCreator:
     Class used to create artifitial image of planes on the airbase
     with create_image method and save this image.
     """
-    SMALL_PLANES = {"su24", "fighters", "su30_su34"}
+    SMALL_PLANES = {"su24", "su27_su35", "su30_su34"}
 
     def __init__(self, path_to_airbase_images_folder: str, path_to_plane_images_folder: str, path_to_save: str, start_index: int=0):
         self.__path_to_airbase_images_folder: str = path_to_airbase_images_folder

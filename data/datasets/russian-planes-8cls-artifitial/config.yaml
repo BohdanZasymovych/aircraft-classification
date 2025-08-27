@@ -1,0 +1,29 @@
+# Basic training parameters
+task: detect
+mode: train
+model: yolo11m.pt
+data: data/dataset-russian-planes-artifitial-v6/data.yaml
+epochs: 100
+patience: 20
+imgsz: 800
+batch: 4
+
+# Augmentation parameters
+hsv_h: 0.015
+hsv_s: 0.8
+hsv_v: 0.5
+degrees: 180.0
+translate: 0.15
+scale: 1.0
+shear: 1.0
+perspective: 0.00005
+flipud: 0.5
+fliplr: 0.5
+bgr: 0.0
+mosaic: 0.8
+mixup: 0.08
+cutmix: 0.0
+copy_paste: 0.05
+copy_paste_mode: 'flip'
+auto_augment: None
+erasing: 0.0

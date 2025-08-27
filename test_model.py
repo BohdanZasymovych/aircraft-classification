@@ -1,9 +1,11 @@
 from ultralytics import YOLO
 from src.utils import choose_model, get_path
 import os
+import pathlib
 import yaml
 
 PATH_TO_REPOSITORY = "/home/bohdan/code/aircraft-classification"
+PATH_TO_DATASETS = "data/datasets"
 
 
 if __name__ == "__main__":
@@ -16,6 +18,8 @@ if __name__ == "__main__":
     path_to_data = None
     with open(path_to_args, "r", encoding="utf-8") as file:
         path_to_data = yaml.safe_load(file)["data"]
+        path_to_data = os.path.split(path_to_data)[0]
+    path_to_data = os.path.join(PATH_TO_DATASETS, os.path.basename(path_to_data), "data.yaml")
     
     with open(path_to_data, "r", encoding="utf-8") as file:
         content = yaml.safe_load(file)

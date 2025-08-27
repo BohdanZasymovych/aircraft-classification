@@ -1,0 +1,14 @@
+train: ../images/train
+val: ../images/val
+test: ../images/test
+
+nc: 8
+names:
+  0: A-50
+  1: Il-76
+  2: Su-27/35_MiG-29/31
+  3: Su-24
+  4: Su-30/Su-34
+  5: Tu-22
+  6: Tu-95
+  7: Tu-160

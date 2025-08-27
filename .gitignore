@@ -1,10 +1,23 @@
 # My files
+
+# Data for artifitial dataset creation
 data/*
 !data/artifitial-data/
 data/artifitial-data/*
 !data/artifitial-data/airbase-images/
+!data/artifitial-data/airbase-images.zip
 !data/artifitial-data/plane-images/
-!data/artifitial-data/plane-images-v2/
+!data/artifitial-data/plane-images.zip
+
+!data/datasets/
+data/datasets/dataset-archives
+data/datasets/*/*
+!data/datasets/*/test-results-*
+!data/datasets/*/*.json
+!data/datasets/*/*.yaml
+!data/datasets/*/*.yml
+
+
 **/.vscode
 test-images
 test-results
