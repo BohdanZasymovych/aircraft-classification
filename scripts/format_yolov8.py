@@ -48,10 +48,3 @@ def format_labels():
             raise ValueError("Label number are not present in any of the sets")
     
     print("Labels created")
-
-
-if __name__ == "__main__":
-    print(f"Number of train images: {len(TRAIN_IMAGES)}")
-    print(f"Number of val images: {len(VAL_IMAGES)}")
-    # copy_images()
-    # format_labels()

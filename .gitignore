@@ -6,7 +6,7 @@ data/*
 data/artifitial-data/*
 !data/artifitial-data/airbase-images/
 !data/artifitial-data/airbase-images.zip
-!data/artifitial-data/plane-images/
+# !data/artifitial-data/plane-images/
 !data/artifitial-data/plane-images.zip
 
 !data/datasets/
@@ -17,11 +17,14 @@ data/datasets/*/*
 !data/datasets/*/*.yaml
 !data/datasets/*/*.yml
 
+# Scripts
+scripts/train_val_test_split.py
+scripts/show_label.py
+scripts/extract_russian_planes.py
+scripts/create_artifitial_dataset.py
 
+# Other
 **/.vscode
-test-images
-test-results
-detection-results
 *.pt
 script/fix_dataset.py
 script/fix_labels.py

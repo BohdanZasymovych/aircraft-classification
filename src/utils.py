@@ -3,8 +3,8 @@ import sys
 from ultralytics import YOLO
 
 
-PATH_TO_MODELS = "/home/bohdan/code/aircraft-classification/runs/detect"
-PATH_TO_IMAGES = "/home/bohdan/code/aircraft-classification/test-images"
+PATH_TO_MODELS = "/home/bohdan/code/projects/aircraft-classification/runs/detect"
+PATH_TO_IMAGES = "/home/bohdan/code/projects/aircraft-classification/test-images"
 
 
 def get_path() -> str:
@@ -15,7 +15,7 @@ def get_path() -> str:
         path = input(">>> ")
         if os.path.exists(path):
             return path
-        print("path doesn't exist, enter valid path")
+        print("Path doesn't exist, enter valid path")
 
 
 def get_models() -> list[str]:
@@ -42,7 +42,7 @@ def choose_model():
     return: tuple with model object and name of a model.
     """
     models = get_models()
-    print("Enter number to chose a model")
+    print("Enter number to choose a model")
     print("\n".join(f"{i}: {model}" for i, model in enumerate(models, start=1)))
     model_name = models[int(input(">>> ").strip())-1]
     model = YOLO(os.path.join(PATH_TO_MODELS, model_name, "weights/best.pt"))
@@ -51,11 +51,11 @@ def choose_model():
 
 def choose_image() -> str:
     """
-    Function asks user to chose image to process.
+    Function asks user to choose image to process.
     return: str, full path to an image.
     """
     images = get_images()
-    print("Enter number to chose an image")
+    print("Enter number to choose an image")
     print("0: Enter full path")
     print("\n".join(f"{i}: {img}" for i, img in enumerate(images, start=1)))
     image_num = int(input(">>> ").strip())

@@ -61,6 +61,6 @@ class MarkerApp:
             image_window.run()
 
 
-if __name__ == "__main__":
-    marker_app = MarkerApp("data/artifitial-data/airbase-images-v2")
-    marker_app.run()
+# if __name__ == "__main__":
+#     marker_app = MarkerApp("data/artifitial-data/airbase-images-v2")
+#     marker_app.run()

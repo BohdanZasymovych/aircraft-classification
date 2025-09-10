@@ -3,7 +3,7 @@ from pprint import pprint
 from src.utils import choose_model, choose_image
 
 
-PATH_TO_SAVE = "/home/bohdan/code/aircraft-classification/test-results"
+PATH_TO_SAVE = "/home/bohdan/code/projects/aircraft-classification/detection-results"
 
 
 model, model_name = choose_model()
