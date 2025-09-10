@@ -116,54 +116,76 @@ Project includes 5 trained models:
 ### Below are examples of aircraft detection on Saky and Engels airbases for each model
 
 ### **train-all-20cls-60ep-s**:
-<img src="detection-results/saky_airbase-train-all-20cls-60ep-s.jpg" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="detection-results/engels_airbase5-train-all-20cls-60ep-s.jpg" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="detection-results/saky_airbase-train-all-20cls-60ep-s.jpg" width="400"></td>
+  <td><img src="detection-results/engels_airbase5-train-all-20cls-60ep-s.jpg" width="400"></td>
+</tr></table>
 
 ### **train-russian-11cls-76ep-artificial-imgsz800-m**:
-<img src="detection-results/saky_airbase-train-russian-11cls-76ep-artifitial-imgsz800-m.jpg" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="detection-results/engels_airbase5-train-russian-11cls-76ep-artifitial-imgsz800-m.jpg" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="detection-results/saky_airbase-train-russian-11cls-76ep-artifitial-imgsz800-m.jpg" width="400"></td>
+  <td><img src="detection-results/engels_airbase5-train-russian-11cls-76ep-artifitial-imgsz800-m.jpg" width="400"></td>
+</tr></table>
 
 ### **train-russian-6cls-100ep-artificial-imgsz800-m**:
-<img src="detection-results/saky_airbase-train-russian-6cls-100ep-artifitial-imgsz800-m.jpg" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="detection-results/engels_airbase5-train-russian-6cls-100ep-artifitial-imgsz800-m.jpg" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="detection-results/saky_airbase-train-russian-6cls-100ep-artifitial-imgsz800-m.jpg" width="400"></td>
+  <td><img src="detection-results/engels_airbase5-train-russian-6cls-100ep-artifitial-imgsz800-m.jpg" width="400"></td>
+</tr></table>
 
 ### **train-russian-6cls-60ep-s**:
-<img src="detection-results/saky_airbase-train-russian-6cls-60ep-s.jpg" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="detection-results/engels_airbase5-train-russian-6cls-60ep-s.jpg" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="detection-results/saky_airbase-train-russian-6cls-60ep-s.jpg" width="400"></td>
+  <td><img src="detection-results/engels_airbase5-train-russian-6cls-60ep-s.jpg" width="400"></td>
+</tr></table>
 
 ### **train-russian-6cls-100ep-combined-imgsz800-m**:
-<img src="detection-results/saky_airbase-train-russian-6cls-100ep-combined-imgsz800-m.jpg" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="detection-results/engels_airbase5-train-russian-6cls-100ep-combined-imgsz800-m.jpg" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="detection-results/saky_airbase-train-russian-6cls-100ep-combined-imgsz800-m.jpg" width="400"></td>
+  <td><img src="detection-results/engels_airbase5-train-russian-6cls-100ep-combined-imgsz800-m.jpg" width="400"></td>
+</tr></table>
 
 ## Performance comparison
 Performance comparison is made only for the 3 models that classify 6 classes of planes, for a fair evaluation. All models were tested on the same set containing 83 real images with instances of all classes.
 
 ### **train-russian-6cls-100ep-artificial-imgsz800-m**:
 
-<img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxF1_curve.png" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxP_curve.png" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxF1_curve.png" width="400"></td>
+  <td><img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxP_curve.png" width="400"></td>
+</tr></table>
 
-<img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxPR_curve.png" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxR_curve.png" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxPR_curve.png" width="400"></td>
+  <td><img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxR_curve.png" width="400"></td>
+</tr></table>
 
 ![Normalized confusion matrix](data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/confusion_matrix_normalized.png)
 
 ### **train-russian-6cls-60ep-s**:
-<img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxF1_curve.png" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxP_curve.png" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxF1_curve.png" width="400"></td>
+  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxP_curve.png" width="400"></td>
+</tr></table>
 
-<img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxPR_curve.png" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxR_curve.png" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxPR_curve.png" width="400"></td>
+  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxR_curve.png" width="400"></td>
+</tr></table>
 
 ![Normalized confusion matrix](data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/confusion_matrix_normalized.png)
 
 ### **train-russian-6cls-100ep-combined-imgsz800-m**:
 
-<img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxF1_curve.png" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxP_curve.png" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxF1_curve.png" width="400"></td>
+  <td><img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxP_curve.png" width="400"></td>
+</tr></table>
 
-<img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxPR_curve.png" width="48%" style="display:inline-block; margin-right:10px;">
-<img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxR_curve.png" width="48%" style="display:inline-block;">
+<table><tr>
+  <td><img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxPR_curve.png" width="400"></td>
+  <td><img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxR_curve.png" width="400"></td>
+</tr></table>
 
 ![Normalized confusion matrix](data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/confusion_matrix_normalized.png)
 
