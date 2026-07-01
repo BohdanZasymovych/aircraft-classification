@@ -148,7 +148,20 @@ Project includes 5 trained models:
 ## Performance comparison
 Performance comparison is made only for the 3 models that classify 6 classes of planes, for a fair evaluation. All models were tested on the same set containing 83 real images with instances of all classes.
 
-### **train-russian-6cls-100ep-artificial-imgsz800-m**:
+### **Real Dataset: train-russian-6cls-60ep-s**:
+<table><tr>
+  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxF1_curve.png" width="400"></td>
+  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxP_curve.png" width="400"></td>
+</tr></table>
+
+<table><tr>
+  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxPR_curve.png" width="400"></td>
+  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxR_curve.png" width="400"></td>
+</tr></table>
+
+![Normalized confusion matrix](data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/confusion_matrix_normalized.png)
+
+### **Artificial Dataset: train-russian-6cls-100ep-artificial-imgsz800-m**:
 
 <table><tr>
   <td><img src="data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/BoxF1_curve.png" width="400"></td>
@@ -162,20 +175,7 @@ Performance comparison is made only for the 3 models that classify 6 classes of 
 
 ![Normalized confusion matrix](data/datasets/russian-planes-6cls-artifitial/test-results-train-russian-6cls-100ep-artifitial-imgsz800-m/confusion_matrix_normalized.png)
 
-### **train-russian-6cls-60ep-s**:
-<table><tr>
-  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxF1_curve.png" width="400"></td>
-  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxP_curve.png" width="400"></td>
-</tr></table>
-
-<table><tr>
-  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxPR_curve.png" width="400"></td>
-  <td><img src="data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/BoxR_curve.png" width="400"></td>
-</tr></table>
-
-![Normalized confusion matrix](data/datasets/russian-planes-6cls/test-results-train-russian-6cls-60ep-s/confusion_matrix_normalized.png)
-
-### **train-russian-6cls-100ep-combined-imgsz800-m**:
+### **Combined Dataset: train-russian-6cls-100ep-combined-imgsz800-m**:
 
 <table><tr>
   <td><img src="data/datasets/russian-planes-6cls-combined/test-results-train-russian-6cls-100ep-combined-imgsz800-m/BoxF1_curve.png" width="400"></td>
