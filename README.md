@@ -10,6 +10,8 @@ This repository contains code, scripts, and experiments for detecting and classi
 
 - ```test_model.py``` — script to test model performance if a training set is available
 
+- ```download_data.py``` — script to download the ```data/``` directory from Hugging Face Hub
+
 - ```data/```
   - ```artificial-data/``` — assets used to build synthetic datasets
     - ```airbase-images.zip``` — archive with airbase images and size labels
@@ -48,6 +50,18 @@ Recommended: create a Python venv and install dependencies listed in `requiremen
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
+
+### Downloading data
+
+Images and datasets are stored [Hugging Face Hub](https://huggingface.co/datasets/BohdanZasymovych/aircraft-classification). To download them into `data/`:
+```bash
+python3 download_data.py
+```
+
+To download only part of the data, pass path patterns relative to `data/`:
+```bash
+python3 download_data.py --include "datasets/russian-planes-6cls/*" "artifitial-data/*.zip"
 ```
 
 ## Usage
