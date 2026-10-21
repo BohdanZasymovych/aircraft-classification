@@ -6,41 +6,41 @@ This repository contains code, scripts, and experiments for detecting and classi
 
 ## Project structure
 
-- ```main.py``` — script to recognize planes in an image using a selectable model
+- `main.py` — script to recognize planes in an image using a selectable model
 
-- ```test_model.py``` — script to test model performance if a training set is available
+- `test_model.py` — script to test model performance if a training set is available
 
-- ```download_data.py``` — script to download the ```data/``` directory from Hugging Face Hub
+- `download_data.py` — script to download the `data/` directory from Hugging Face Hub
 
-- ```data/```
-  - ```artificial-data/``` — assets used to build synthetic datasets
-    - ```airbase-images.zip``` — archive with airbase images and size labels
-    - ```plane-images.zip``` — archive with all types of planes and size labels
-    - ```airbase-images/```
-      - ```images/``` — folder with raw images of airbases (images do not contain aircraft)
-      - ```labels/``` — folder with labels for airbase images containing their real size (in meters) and points where planes can be placed
-  - ```datasets/``` — folder containing dataset folders
-    - ```dataset-folder```
-      - ```test-results``` — folder with results of tests on the test set
-      - ```class_names_mapping.json``` — mapping of class id to its name
-      - ```config.yaml``` — config with training and augmentation parameters used to train the corresponding model
-      - ```data.yaml``` — data file for training YOLO model
+- `data/`
+  - `artificial-data/` — assets used to build synthetic datasets
+    - `airbase-images.zip` — archive with airbase images and size labels
+    - `plane-images.zip` — archive with all types of planes and size labels
+    - `airbase-images/`
+      - `images/` — folder with raw images of airbases (images do not contain aircraft)
+      - `labels/` — folder with labels for airbase images containing their real size (in meters) and points where planes can be placed
+  - `datasets/` — folder containing dataset folders
+    - `dataset-folder`
+      - `test-results` — folder with results of tests on the test set
+      - `class_names_mapping.json` — mapping of class id to its name
+      - `config.yaml` — config with training and augmentation parameters used to train the corresponding model
+      - `data.yaml` — data file for training YOLO model
 
-- ```runs/detect``` — folder with trained models
+- `runs/detect` — folder with trained models
 
-- ```test-images/``` — folder containing images of airbases for testing
+- `test-images/` — folder containing images of airbases for testing
 
-- ```detection-results/``` — folder where processed images with classified planes are saved
+- `detection-results/` — folder where processed images with classified planes are saved
 
-- ```scripts/``` — dataset creation, preprocessing, and utilities
-  - ```artificial_image_generator.py``` — classes used to create artificial satellite images
-  - ```set_plane_locations.py``` — module with class used to set spawn locations for planes on images of empty airbases for generating artificial satellite images
-  - ```utils.py``` — utilities used in other scripts 
-  - ```format_yolov8.py``` — module with functions to convert the initial dataset with .xml labels to YOLO format
-  - ```xml_parser.py``` — module with class used to convert the initial dataset with .xml labels to YOLO format
+- `scripts/` — dataset creation, preprocessing, and utilities
+  - `artificial_image_generator.py` — classes used to create artificial satellite images
+  - `set_plane_locations.py` — module with class used to set spawn locations for planes on images of empty airbases for generating artificial satellite images
+  - `utils.py` — utilities used in other scripts 
+  - `format_yolov8.py` — module with functions to convert the initial dataset with .xml labels to YOLO format
+  - `xml_parser.py` — module with class used to convert the initial dataset with .xml labels to YOLO format
 
-- ```src/```
-  - ```utils.py``` — shared helper functions used by ```main.py``` and ```test_model.py```
+- `src/`
+  - `utils.py` — shared helper functions used by `main.py` and `test_model.py`
 
 ## Installation
 
@@ -63,6 +63,8 @@ To download only part of the data, pass path patterns relative to `data/`:
 ```bash
 python3 download_data.py --include "datasets/russian-planes-6cls/*" "artifitial-data/*.zip"
 ```
+
+For a description of the data structure, datasets and label formats, see [data/README.md](data/README.md).
 
 By default, only files missing from `data/` are downloaded. Files that already exist are skipped, even if they differ from the Hub version. To check every file against the Hub and re-download changed ones (slow), use `--sync`.
 
