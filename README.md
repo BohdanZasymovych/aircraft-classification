@@ -64,6 +64,8 @@ To download only part of the data, pass path patterns relative to `data/`:
 python3 download_data.py --include "datasets/russian-planes-6cls/*" "artifitial-data/*.zip"
 ```
 
+By default, only files missing from `data/` are downloaded. Files that already exist are skipped, even if they differ from the Hub version. To check every file against the Hub and re-download changed ones (slow), use `--sync`.
+
 ## Usage
 ```bash
 cd aircraft-classification
