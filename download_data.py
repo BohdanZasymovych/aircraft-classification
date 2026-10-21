@@ -7,6 +7,8 @@ from tqdm.contrib.concurrent import thread_map
 
 REPO_ID = "BohdanZasymovych/aircraft-classification"
 LOCAL_DIR = "data"
+# Hugging Face repo config: it would make git store files in data/ as LFS pointers
+EXCLUDE = [".gitattributes"]
 
 
 parser = argparse.ArgumentParser(description="Download the data/ directory from Hugging Face Hub")
@@ -19,9 +21,10 @@ if args.sync:
     snapshot_download(repo_id=args.repo_id,
                       repo_type="dataset",
                       local_dir=LOCAL_DIR,
-                      allow_patterns=args.include)
+                      allow_patterns=args.include,
+                      ignore_patterns=EXCLUDE)
 else:
-    files = list_repo_files(args.repo_id, repo_type="dataset")
+    files = [f for f in list_repo_files(args.repo_id, repo_type="dataset") if f not in EXCLUDE]
     if args.include:
         files = [f for f in files if any(fnmatch(f, pattern) for pattern in args.include)]
     missing = [f for f in files if not os.path.exists(os.path.join(LOCAL_DIR, f))]

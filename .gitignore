@@ -1,16 +1,9 @@
 # My files
 
-# Data for artifitial dataset creation
+# Data is hosted on Hugging Face (see download_data.py); only docs, configs and test results are tracked
 data/*
-!data/artifitial-data/
-data/artifitial-data/*
-!data/artifitial-data/airbase-images/
-!data/artifitial-data/airbase-images.zip
-# !data/artifitial-data/plane-images/
-!data/artifitial-data/plane-images.zip
-
+!data/README.md
 !data/datasets/
-data/datasets/dataset-archives
 data/datasets/*/*
 !data/datasets/*/test-results-*
 !data/datasets/*/*.json
